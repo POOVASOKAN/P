@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>WhiteHead Plumbing</title>
+        <!-- <link rel="stylesheet" href="stylee.css" /> -->
+        <script
+          src="https://kit.fontawesome.com/f323523d5f.js"
+          crossorigin="anonymous"
+        ></script>
+        <style>
+          @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+        </style>
+        <style>
+          :root {
+            --surface-color: #fff;
+            --curve: 40;
+          }
+
+          * {
+            box-sizing: border-box;
+          }
+
+          body {
+            font-family: "Noto Sans JP", sans-serif;
+            background-color: #fff;
+          }
+
+          .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 4rem 5vw;
+            padding: 0;
+            list-style-type: none;
+          }
+
+          .card {
+            position: relative;
+            display: block;
+            height: 100%;
+            border-radius: calc(var(--curve) * 1px);
+            overflow: hidden;
+            text-decoration: none;
+          }
+
+          .card__image {
+            width: 100%;
+            height: auto;
+          }
+
+          .card__overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 1;
+            border-radius: calc(var(--curve) * 1px);
+            background-color: var(--surface-color);
+            transform: translateY(100%);
+            transition: 0.2s ease-in-out;
+          }
+
+          .card:hover .card__overlay {
+            transform: translateY(0);
+          }
+
+          .card__header {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 2em;
+            padding: 2em;
+            border-radius: calc(var(--curve) * 1px) 0 0 0;
+            background-color: var(--surface-color);
+            transform: translateY(-100%);
+            transition: 0.2s ease-in-out;
+          }
+
+          .card__arc {
+            width: 80px;
+            height: 80px;
+            position: absolute;
+            bottom: 100%;
+            right: 0;
+            z-index: 1;
+          }
+
+          .card__arc path {
+            fill: var(--surface-color);
+            /* d: path("M 40 80 c 22 0 40 -22 40 -40 v 40 Z"); */
+          }
+
+          .card:hover .card__header {
+            transform: translateY(0);
+          }
+
+          .card__thumb {
+            flex-shrink: 0;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+          }
+
+          .card__title {
+            font-size: 1em;
+            margin: 0 0 0.3em;
+            color: black;
+          }
+
+          .card__tagline {
+            display: block;
+            margin: 1em 0;
+            font-family: "MockFlowFont";
+            font-size: 0.8em;
+            color: black;
+          }
+
+          .card__status {
+            font-size: 0.8em;
+            color: black;
+          }
+
+          .card__description {
+            padding: 0 2em 2em;
+            margin: 0;
+            color: black;
+            font-family: "MockFlowFont";
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+            overflow: hidden;
+          }
+        </style>
+      </head>
+      <body>
+        <div>
+          <ul class="cards">
+            <li>
+              <a href="" class="card">
+                <img
+                  src="https://via.placeholder.com/308x220"
+                  class="card__image"
+                  alt=""
+                />
+                <div class="card__overlay">
+                  <div class="card__header">
+                    <svg
+                      class="card__arc"
+                      xmlns="https://via.placeholder.com/308x220"
+                    >
+                      <path></path>
+                    </svg>
+                    <img
+                      class="card__thumb"
+                      src="https://via.placeholder.com/308x220"
+                      alt=""
+                    />
+                    <div class="card__header-text">
+                      <h3 class="card__title">Plumbing</h3>
+                      <span class="card__status">More Info </span>
+                    </div>
+                  </div>
+                  <p class="card__description">
+                    We offer professional plumbing services at a sensible cost
+                  </p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="" class="card">
+                <img
+                  src="https://via.placeholder.com/308x220"
+                  class="card__image"
+                  alt=""
+                />
+                <div class="card__overlay">
+                  <div class="card__header">
+                    <svg
+                      class="card__arc"
+                      xmlns="https://via.placeholder.com/308x220"
+                    >
+                      <path />
+                    </svg>
+                    <img
+                      class="card__thumb"
+                      src="https://via.placeholder.com/308x220"
+                      alt=""
+                    />
+                    <div class="card__header-text">
+                      <h3 class="card__title">Heating</h3>
+                      <span class="card__status">More Info</span>
+                    </div>
+                  </div>
+                  <p class="card__description">
+                    We offer professional heating services at a sensible cost
+                  </p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="" class="card">
+                <img
+                  src="https://via.placeholder.com/308x220"
+                  class="card__image"
+                  alt=""
+                />
+                <div class="card__overlay">
+                  <div class="card__header">
+                    <svg
+                      class="card__arc"
+                      xmlns="https://via.placeholder.com/308x220"
+                    >
+                      <path />
+                    </svg>
+                    <img
+                      class="card__thumb"
+                      src="https://via.placeholder.com/308x220"
+                      alt=""
+                    />
+                    <div class="card__header-text">
+                      <h3 class="card__title">Carpentry</h3>
+                      <span class="card__status">More Info</span>
+                    </div>
+                  </div>
+                  <p class="card__description">
+                    We offer professional carpentry services at a sensible cost
+                  </p>
+                </div>
+              </a>
+            </li>
+
+            <li>
+              <a href="" class="card">
+                <img
+                  src="https://via.placeholder.com/308x220"
+                  class="card__image"
+                  alt=""
+                />
+                <div class="card__overlay">
+                  <div class="card__header">
+                    <svg
+                      class="card__arc"
+                      xmlns="https://via.placeholder.com/308x220"
+                    >
+                      <path />
+                    </svg>
+                    <img
+                      class="card__thumb"
+                      src="https://via.placeholder.com/308x220"
+                      alt=""
+                    />
+                    <div class="card__header-text">
+                      <h3 class="card__title">Elcetrician</h3>
+                      <span class="card__status">More Info</span>
+                    </div>
+                  </div>
+                  <p class="card__description">
+                    We offer professional electrical services at a sensible cost
+                  </p>
+                </div>
+              </a>
+            </li>
+
+            <li>
+              <a href="" class="card">
+                <img
+                  src="https://via.placeholder.com/308x220"
+                  class="card__image"
+                  alt=""
+                />
+                <div class="card__overlay">
+                  <div class="card__header">
+                    <svg
+                      class="card__arc"
+                      xmlns="https://via.placeholder.com/308x220"
+                    >
+                      <path />
+                    </svg>
+                    <img
+                      class="card__thumb"
+                      src="https://via.placeholder.com/308x220"
+                      alt=""
+                    />
+                    <div class="card__header-text">
+                      <h3 class="card__title">AirCon</h3>
+                      <span class="card__status">More Info</span>
+                    </div>
+                  </div>
+                  <p class="card__description">
+                    We offer professional Aircon services at a sensible cost
+                  </p>
+                </div>
+              </a>
+            </li>
+
+            <li>
+              <a href="" class="card">
+                <img
+                  src="https://via.placeholder.com/308x220"
+                  class="card__image"
+                  alt=""
+                />
+                <div class="card__overlay">
+                  <div class="card__header">
+                    <svg
+                      class="card__arc"
+                      xmlns="https://via.placeholder.com/308x220"
+                    >
+                      <path />
+                    </svg>
+                    <img
+                      class="card__thumb"
+                      src="https://via.placeholder.com/308x220"
+                      alt=""
+                    />
+                    <div class="card__header-text">
+                      <h3 class="card__title">Bathroom renovations</h3>
+                      <span class="card__status">More Info</span>
+                    </div>
+                  </div>
+                  <p class="card__description">
+                    We offer professional renowation services at a sensible cost
+                  </p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="" class="card">
+                <img
+                  src="https://via.placeholder.com/308x220"
+                  class="card__image"
+                  alt=""
+                />
+                <div class="card__overlay">
+                  <div class="card__header">
+                    <svg
+                      class="card__arc"
+                      xmlns="https://via.placeholder.com/308x220"
+                    >
+                      <path />
+                    </svg>
+                    <img
+                      class="card__thumb"
+                      src="https://via.placeholder.com/308x220"
+                      alt=""
+                    />
+                    <div class="card__header-text">
+                      <h3 class="card__title">Emergency</h3>
+                      <span class="card__status">More Info</span>
+                    </div>
+                  </div>
+                  <p class="card__description">
+                    We offer professional emergency services at a sensible cost
+                  </p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="" class="card">
+                <img
+                  src="https://via.placeholder.com/308x220"
+                  class="card__image"
+                  alt=""
+                />
+                <div class="card__overlay">
+                  <div class="card__header">
+                    <svg
+                      class="card__arc"
+                      xmlns="https://via.placeholder.com/308x220"
+                    >
+                      <path />
+                    </svg>
+                    <img
+                      class="card__thumb"
+                      src="https://via.placeholder.com/308x220"
+                      alt=""
+                    />
+                    <div class="card__header-text">
+                      <h3 class="card__title">Commercials</h3>
+                      <span class="card__status">More Info</span>
+                    </div>
+                  </div>
+                  <p class="card__description">
+                    We offer professional Commercial services at a sensible cost
+                  </p>
+                </div>
+              </a>
+            </li>
+
+            <li>
+              <a href="" class="card">
+                <img
+                  src="https://via.placeholder.com/308x220"
+                  class="card__image"
+                  alt=""
+                />
+                <div class="card__overlay">
+                  <div class="card__header">
+                    <svg
+                      class="card__arc"
+                      xmlns="https://via.placeholder.com/308x220"
+                    >
+                      <path />
+                    </svg>
+                    <img
+                      class="card__thumb"
+                      src="https://via.placeholder.com/308x220"
+                      alt=""
+                    />
+                    <div class="card__header-text">
+                      <h3 class="card__title">Much more</h3>
+                      <span class="card__status">More Info</span>
+                    </div>
+                  </div>
+                  <p class="card__description">
+                    We offer professional services at a sensible cost
+                  </p>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <script src="./script.js"></script>
+      </body>
+    </html>
+  </body>
+</html>

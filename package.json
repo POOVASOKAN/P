@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "nodemailer": "^6.9.14"
+  },
+  "name": "nodemon",
+  "version": "1.0.0",
+  "description": "nodemon",
+  "main": "script.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "jext"
+  },
+  "keywords": [
+    "nodemon",
+    "bundler"
+  ],
+  "author": "poova asokanj",
+  "license": "ISC"
+}

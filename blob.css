@@ -1,0 +1,33 @@
+#blob {
+  position: relative;
+  width: 400px; /* Increased width */
+  height: 400px; /* Increased height */
+  border-radius: 50%;
+  overflow: hidden;
+  transform: rotate(var(--r, 0));
+  cursor: pointer;
+}
+
+#blob div {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 500px; /* Increased width */
+  height: 500px; /* Increased height */
+  transform: translate(-50%, -50%) rotate(calc(var(--r, 0deg) * -1));
+  background: #3f3d56
+    url("https://img.freepik.com/free-photo/plumbing-professional-doing-his-job_23-2150721571.jpg?t=st=1720177908~exp=1720181508~hmac=34b0cf262440652b40b916f01d9176968dc863d3604894a3537153576b55424b&w=1380")
+    center / 440px auto; /* Increased size to match the new dimensions */
+}
+
+/* Hide the button that triggers the blob change */
+button.blob-trigger-btn {
+  display: none;
+}
+
+#blob,
+#blob div,
+button {
+  transition: ease 600ms;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0);
+}

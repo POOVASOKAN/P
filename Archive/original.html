@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WhiteHead Plumbing</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/f323523d5f.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+    </style>
+    <style>
+      :root {
+        --surface-color: #fff;
+        --curve: 40;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background-color: white;
+        font-family: "Manrope", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 300;
+        font-style: normal;
+      }
+
+      .container {
+        margin: 0 auto;
+      }
+      .header {
+        background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100px; /* Fixed height for the header */
+      }
+
+      .header .logo-container {
+        display: flex;
+        align-items: center;
+        height: 100%; /* Ensures the logo scales within the header height */
+      }
+
+      .header .logo {
+        max-height: 100%; /* Ensures the logo fits within the header height */
+      }
+
+      .header .contact-info {
+        display: flex;
+        align-items: center;
+      }
+
+      .contact-info .phone-number {
+        background: linear-gradient(
+          45deg,
+          #ff7e5f,
+          #feb47b
+        ); /* Gradient background */
+        color: white;
+        padding: 10px 20px;
+        border-radius: 10px;
+        cursor: pointer;
+        border: none;
+        font-size: 16px;
+        transition: background 0.3s ease;
+      }
+
+      .contact-info .phone-number:hover {
+        background: linear-gradient(
+          45deg,
+          #feb47b,
+          #ff7e5f
+        ); /* Reverse gradient on hover */
+      }
+
+      .nav {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        padding: 0; /* Remove padding to align with the header height */
+        font-size: 18px;
+        flex-wrap: wrap;
+        cursor: pointer;
+        align-items: center;
+        height: 100%; /* Align nav items vertically within the header */
+      }
+
+      .nav div {
+        position: relative;
+        color: #000;
+        text-decoration: none;
+        height: 100%; /* Ensure nav items fill the height of the header */
+        display: flex;
+        align-items: center; /* Center align the text within nav items */
+      }
+
+      .nav div:hover {
+        color: #000;
+      }
+
+      .nav div::before {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #eb955e;
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+      }
+
+      .nav div:hover::before {
+        transform: scaleX(1);
+      }
+
+      .main-content {
+        display: flex;
+        gap: 30px;
+        padding: 20px 0;
+        flex-wrap: wrap;
+        margin-right: 30px;
+        margin-left: 30px;
+      }
+
+      .main-content .text-section {
+        flex: 1;
+        min-width: 300px;
+      }
+
+      .main-content .text-section h1 {
+        font-size: 42px;
+        color: #333;
+      }
+
+      .main-content .text-section .highlighted-text {
+        color: #ff7e5f; /* Change color of "Professional service" text */
+      }
+
+      .main-content .text-section p {
+        font-size: 18px;
+        color: #333;
+        text-align: justify;
+      }
+
+      .main-content .text-section .contact-btn {
+        background: linear-gradient(
+          45deg,
+          #ff7e5f,
+          #feb47b
+        ); /* Gradient background */
+        color: white !important;
+        padding: 10px 20px !important;
+        border-radius: 10px;
+        cursor: pointer;
+        text-align: center;
+        display: inline-block;
+        margin-top: 20px;
+        border: none; /* Remove border */
+        transition: background 0.3s ease;
+      }
+
+      .main-content .text-section .contact-btn:hover {
+        background: linear-gradient(
+          45deg,
+          #feb47b,
+          #ff7e5f
+        ); /* Reverse gradient on hover */
+      }
+
+      .main-content img {
+        max-width: 100%;
+        border-radius: 20px;
+        transition: transform 0.5s ease; /* Transition effect */
+      }
+
+      .main-content img:hover {
+        transform: scale(1.05); /* Zoom-in effect on hover */
+      }
+
+      .about-section h2,
+      .services-section h2,
+      .contact-section h2 {
+        font-size: 42px;
+        text-align: center;
+        color: #333;
+      }
+
+      .about-section p {
+        font-size: 18px;
+        text-align: center;
+        color: #333;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .about-section .stats {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 20px;
+        flex-wrap: wrap;
+      }
+
+      .stat h3 {
+        color: #eb955e !important;
+      }
+
+      .stat h3:hover {
+        text-shadow: #eb955e;
+      }
+
+      .about-section .stats .stat {
+        text-align: center;
+        flex: 1;
+        min-width: 50px;
+      }
+
+      .about-section .stats .stat h3 {
+        font-size: 24px;
+        color: #333;
+      }
+
+      .about-section .stats .stat p {
+        font-size: 16px;
+        color: #777;
+      }
+
+      .services-section .cards {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin: 4rem 5vw;
+        padding: 0;
+        list-style-type: none;
+      }
+
+      .card {
+        position: relative;
+        display: block;
+        height: 100%;
+        border-radius: calc(var(--curve) * 1px);
+        overflow: hidden;
+        text-decoration: none;
+        border: 1px solid #eb955e;
+      }
+
+      .card__image {
+        width: 100%;
+        height: auto;
+      }
+
+      .card__overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+        border-radius: calc(var(--curve) * 1px);
+        border: 1px solid #eb955e;
+        background-color: var(--surface-color);
+        transform: translateY(100%);
+        transition: 0.2s ease-in-out;
+      }
+
+      .card:hover .card__overlay {
+        transform: translateY(0);
+        border: 1px solid #eb955e;
+      }
+
+      .card__header {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 2em;
+        padding: 2em;
+        border-radius: calc(var(--curve) * 1px) 0 0 0;
+        background-color: var(--surface-color);
+        transform: translateY(-100%);
+        transition: 0.2s ease-in-out;
+        border-top: 1px solid #eb955e;
+      }
+
+      .card__arc {
+        width: 80px;
+        height: 80px;
+        position: absolute;
+        bottom: 100%;
+        right: 0;
+        z-index: 1;
+        border-bottom: 1px solid #eb955e;
+      }
+
+      .card__arc path {
+        fill: var(--surface-color);
+        border-top: 1px solid #eb955e;
+      }
+
+      .card:hover .card__header {
+        transform: translateY(0);
+      }
+
+      .card__thumb {
+        flex-shrink: 0;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+      }
+
+      .card__title {
+        font-size: 1em;
+        margin: 0 0 0.3em;
+        color: #6a515e;
+      }
+
+      .card__tagline {
+        display: block;
+        margin: 1em 0;
+        font-family: "Manrope", sans-serif;
+        font-size: 0.8em;
+        color: black;
+      }
+
+      .card__status {
+        font-size: 0.8em;
+        color: black;
+      }
+
+      .card__description {
+        padding: 0 2em 2em;
+        margin: 0;
+        color: black;
+        font-family: "Manrope", sans-serif;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
+      }
+
+      .contact-section {
+        background-color: #f1f1f1;
+        padding: 40px 20px;
+        text-align: center;
+      }
+
+      .contact-section h2 {
+        font-size: 42px;
+        color: #333;
+      }
+
+      .contact-section .contact-info {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        margin-top: 20px;
+        flex-wrap: wrap;
+      }
+
+      .contact-section .contact-info .call {
+        background-color: #6b7280;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+
+      .contact-section .form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        max-width: 600px;
+        margin: 20px auto;
+        text-align: left;
+      }
+
+      .contact-section .form input,
+      .contact-section .form textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #e0e0e0;
+        border-radius: 10px;
+      }
+
+      .contact-section .form button {
+        background-color: #6b7280;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+
+      .footer {
+        background-color: #6b7280;
+        color: white;
+        padding: 20px 0;
+        text-align: center;
+      }
+
+      .footer .links {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-bottom: 10px;
+        flex-wrap: wrap;
+      }
+
+      .footer .links a {
+        color: white;
+        text-decoration: none;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 1024px) {
+        .header,
+        .nav,
+        .main-content,
+        .about-section,
+        .services-section,
+        .contact-section,
+        .footer {
+          padding: 20px 10px;
+        }
+
+        .main-content {
+          flex-direction: column;
+        }
+
+        .services-section .service-card {
+          width: calc(50% - 20px);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .header {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .header .logo {
+          height: 50px; /* Adjust the height as needed */
+        }
+
+        .header .contact-info {
+          font-size: 18px;
+        }
+
+        .nav {
+          font-size: 16px;
+        }
+
+        .main-content .text-section h1 {
+          font-size: 32px;
+        }
+
+        .about-section h2,
+        .services-section h2,
+        .contact-section h2 {
+          font-size: 32px;
+        }
+
+        .services-section .service-card {
+          width: calc(100% - 20px);
+        }
+      }
+
+      @media (max-width: 480px) {
+        .nav {
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .main-content .text-section h1 {
+          font-size: 24px;
+        }
+
+        .about-section h2,
+        .services-section h2,
+        .contact-section h2 {
+          font-size: 24px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header Section -->
+      <div class="header">
+        <div class="logo-container">
+          <img
+            src="./Assets - Logo /Whitehead logo Transparent.png"
+            alt="Logo"
+            class="logo"
+          />
+        </div>
+        <div class="contact-info">
+          <button class="phone-number">Emergency call us 07652122334</button>
+        </div>
+      </div>
+
+      <!-- Navigation Bar  -->
+      <nav>
+        <div class="nav">
+          <div class="plumbing-nav">Plumbing</div>
+          <div class="heating-nav">Heating</div>
+          <div class="carpentry-nav">Carpentry</div>
+          <div class="Electrician-nav">Electrician</div>
+          <div class="Aircon-nav">AirCon</div>
+          <div class="Bathroom-nav">Bathrooms</div>
+          <div class="commercials-nav">Commercials</div>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <div class="text-section">
+          <h1 class="hero-title">
+            Fast, Efficient, and Reliable
+            <span class="highlighted-text">professional services</span>
+          </h1>
+          <p class="hero-para">
+            We pride ourselves in delivering fast, efficient, and reliable
+            solutions for all your plumbing, heating, and electrical needs.
+            Serving the Long Eaton and Nottingham areas, our team of expert
+            engineers is dedicated to ensuring your comfort and safety with
+            top-quality service.
+          </p>
+          <div class="contact-btn">Contact us</div>
+        </div>
+        <img src="https://via.placeholder.com/600x492" alt="Service Image" />
+      </div>
+    </div>
+  </body>
+</html>

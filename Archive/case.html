@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Case Study - Bathroom Makeover</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+      body {
+        margin: 0;
+        font-family: "Manrope", sans-serif;
+        background-color: #f5f5f5;
+        color: #333;
+      }
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        padding: 20px;
+        margin: 0 auto;
+      }
+      .header {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .header h1 {
+        font-size: 36px;
+        margin: 0;
+      }
+      .header p {
+        font-size: 18px;
+        margin: 5px 0 20px;
+        color: #666;
+      }
+      .image-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 80vh;
+        overflow: hidden;
+      }
+      .image-container img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      .how-we-did-it {
+        background-color: #f9fafc;
+        padding: 40px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        text-align: left;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-top: 40px;
+      }
+      .how-we-did-it .info {
+        flex: 1;
+      }
+      .how-we-did-it .info img {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 20px;
+      }
+      .how-we-did-it .info h2 {
+        font-size: 24px;
+        margin: 0 0 10px;
+      }
+      .how-we-did-it .info p {
+        font-size: 16px;
+        margin: 0;
+        color: #666;
+      }
+      .how-we-did-it .stats {
+        display: flex;
+        flex: 2;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .how-we-did-it .stat-item {
+        flex: 1;
+        background-color: white;
+        border-radius: 10px;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin: 0 10px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+      .how-we-did-it .stat-item h3 {
+        font-size: 18px;
+        margin: 0 0 10px;
+        color: #333;
+      }
+      .how-we-did-it .stat-item p {
+        font-size: 24px;
+        margin: 0;
+        color: #666;
+      }
+      .highlight {
+        background-color: #6366f1;
+        color: white;
+      }
+      .how-we-did-it .stat-item::before {
+        content: "";
+        position: absolute;
+        top: -100%;
+        left: -100%;
+        width: 300%;
+        height: 300%;
+        background: rgba(99, 102, 241, 0.2);
+        transition: all 0.3s ease;
+        transform: rotate(45deg);
+      }
+      .how-we-did-it .stat-item:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+      }
+      .how-we-did-it .stat-item:hover::before {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+      @media (max-width: 768px) {
+        .header h1 {
+          font-size: 28px;
+        }
+        .header p {
+          font-size: 16px;
+        }
+        .how-we-did-it {
+          flex-direction: column;
+          text-align: center;
+        }
+        .how-we-did-it .stats {
+          flex-direction: column;
+          gap: 20px;
+        }
+        .how-we-did-it .stat-item {
+          margin: 10px 0;
+        }
+      }
+      @media (max-width: 480px) {
+        .header h1 {
+          font-size: 24px;
+        }
+        .header p {
+          font-size: 14px;
+        }
+        .how-we-did-it .info h2 {
+          font-size: 20px;
+        }
+        .how-we-did-it .info p {
+          font-size: 14px;
+        }
+        .how-we-did-it .stat-item h3 {
+          font-size: 16px;
+        }
+        .how-we-did-it .stat-item p {
+          font-size: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Case Study - Bathroom Makeover</h1>
+        <p>
+          Intro about the client - and the work description - what the client
+          wanted
+        </p>
+      </div>
+      <div class="image-container">
+        <img
+          src="https://via.placeholder.com/800x600"
+          alt="Bathroom Makeover"
+        />
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="how-we-did-it">
+        <div class="info">
+          <img src="your-icon-path.png" alt="Icon" />
+          <h2>How we did it ?</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur nunc nunc sit velit eget
+            sollicitudin sit posuere augue vestibulum eget turpis lobortis donec
+          </p>
+        </div>
+        <div class="stats">
+          <div class="stat-item">
+            <h3>Client satisfaction</h3>
+            <p>99%</p>
+          </div>
+          <div class="stat-item highlight">
+            <h3>Work Completed in</h3>
+            <p>3 Weeks</p>
+          </div>
+          <div class="stat-item">
+            <h3>Approx cost</h3>
+            <p>£1234</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

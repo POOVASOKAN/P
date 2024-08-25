@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Our Services</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+      }
+
+      .our-services {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .our-services h2 {
+        font-size: 36px;
+        color: #3f3d56;
+      }
+
+      .service-cards-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      .service-card {
+        width: 90%;
+        max-width: 1200px;
+        display: flex;
+        align-items: stretch;
+        justify-content: space-between;
+        margin-bottom: 40px; /* Increased margin */
+        gap: 20px; /* Reduced gap */
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added transition for transform and box-shadow */
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        text-align: left; /* Ensure text is left-aligned by default */
+      }
+
+      .service-card:hover {
+        transform: scale(1.05); /* Slightly scale up on hover */
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Add shadow on hover */
+      }
+
+      .service-card .flip {
+        flex-direction: row-reverse !important; /* Flip the order of the flex items */
+      }
+
+      .service-content {
+        flex: 0.5; /* Give less space to text container */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: left; /* Ensure text is left-aligned by default */
+      }
+
+      .service-card.flip .service-content {
+        text-align: right; /* Ensure text is right-aligned in flipped cards */
+        align-items: flex-end; /* Align items to the right in flipped cards */
+      }
+
+      .service-image {
+        flex: 0.5; /* Give more space to image container */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+
+      .service-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        filter: contrast(120%);
+        transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+      }
+
+      .service-image:hover img {
+        box-shadow: 1px 1px 10px 0 rgba(0, 0, 0, 0.1);
+      }
+
+      .glow-wrap {
+        overflow: hidden;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+      }
+
+      .glow {
+        display: block;
+        position: absolute;
+        width: 40%;
+        height: 200%;
+        background: rgba(255, 255, 255, 0.2);
+        top: 0;
+        filter: blur(5px);
+        transform: rotate(45deg) translate(-450%, 0);
+        transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+      }
+
+      .service-image:hover .glow {
+        transform: rotate(45deg) translate(450%, 0);
+        transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+      }
+
+      .contact-btn {
+        background-color: #6c63ff;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-family: "Montserrat", sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+        padding: 10px 20px;
+        outline: none;
+        cursor: pointer;
+        user-select: text;
+        margin-top: 20px;
+        align-self: flex-start; /* Ensure button is left-aligned by default */
+      }
+
+      .service-card.flip .contact-btn {
+        align-self: flex-end; /* Ensure button is right-aligned in flipped cards */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Our Services Section -->
+    <section class="our-services">
+      <h2>Our Services</h2>
+      <div class="service-cards-container">
+        <div class="service-card">
+          <div class="service-content">
+            <h3 class="emergency-plumbing">Emergency Plumbing</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+              rhoncus dolor ut sapien bibendum, eget auctor ex dictum. Aenean
+              eget varius nisi, non hendrerit magna.
+            </p>
+            <div class="buttons-group">
+              <button class="contact-btn button">Contact us</button>
+            </div>
+          </div>
+          <div class="service-image">
+            <img
+              src="https://via.placeholder.com/300x200"
+              alt="Emergency Plumbing"
+              class="placeholder-image-icon"
+            />
+            <div class="glow-wrap">
+              <i class="glow"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-card flip">
+          <div class="service-image">
+            <img
+              src="https://via.placeholder.com/300x200"
+              alt="Installation and Repairs"
+              class="placeholder-image-icon"
+            />
+            <div class="glow-wrap">
+              <i class="glow"></i>
+            </div>
+          </div>
+          <div class="service-content">
+            <h3 class="emergency-plumbing">Installation and Repairs</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+              rhoncus dolor ut sapien bibendum, eget auctor ex dictum. Aenean
+              eget varius nisi, non hendrerit magna.
+            </p>
+            <div class="buttons-group">
+              <button class="contact-btn button">Contact us</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-content">
+            <h3 class="emergency-plumbing">Damp and Leak Detection</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+              rhoncus dolor ut sapien bibendum, eget auctor ex dictum. Aenean
+              eget varius nisi, non hendrerit magna.
+            </p>
+            <div class="buttons-group">
+              <button class="contact-btn button">Contact us</button>
+            </div>
+          </div>
+          <div class="service-image">
+            <img
+              src="https://via.placeholder.com/300x200"
+              alt="Damp and Leak Detection"
+              class="placeholder-image-icon"
+            />
+            <div class="glow-wrap">
+              <i class="glow"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-card flip">
+          <div class="service-image">
+            <img
+              src="https://via.placeholder.com/300x200"
+              alt="Drain Blockages"
+              class="placeholder-image-icon"
+            />
+            <div class="glow-wrap">
+              <i class="glow"></i>
+            </div>
+          </div>
+          <div class="service-content">
+            <h3 class="emergency-plumbing">Drain Blockages</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+              rhoncus dolor ut sapien bibendum, eget auctor ex dictum. Aenean
+              eget varius nisi, non hendrerit magna.
+            </p>
+            <div class="buttons-group">
+              <button class="contact-btn button">Contact us</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
