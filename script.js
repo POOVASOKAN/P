@@ -178,3 +178,27 @@ document.addEventListener("DOMContentLoaded", function () {
     showTestimonials(currentIndex);
   }
 });
+
+// Lazy Load Background Images
+document.addEventListener("DOMContentLoaded", function () {
+  const lazyBackgrounds = document.querySelectorAll(".lazy-background div");
+
+  if ("IntersectionObserver" in window) {
+    let lazyBackgroundObserver = new IntersectionObserver(function (
+      entries,
+      observer
+    ) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          let lazyBackground = entry.target;
+          lazyBackground.style.backgroundImage = lazyBackground.dataset.bg;
+          lazyBackgroundObserver.unobserve(lazyBackground);
+        }
+      });
+    });
+
+    lazyBackgrounds.forEach(function (lazyBackground) {
+      lazyBackgroundObserver.observe(lazyBackground);
+    });
+  }
+});
