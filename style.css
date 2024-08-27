@@ -34,7 +34,6 @@ body {
 }
 
 html {
-  /* padding: 10px; */
   background: radial-gradient(#fff) no-repeat 0 0 / 100% 100%;
   background-attachment: fixed;
 }
@@ -56,12 +55,15 @@ html {
 }
 
 .header .logo-container {
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
+  /* display: flex; */
+  /* align-items: start; */
+  /* flex-shrink: 0; */
   padding-top: 20px;
+  width: 100px;
+  /* height: 100px; */
 }
 
+/* Adjusted the logo size */
 .header .logo {
   height: 200px;
   width: auto;
@@ -70,6 +72,7 @@ html {
 .header .contact-info {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .contact-info .phone-number,
@@ -132,21 +135,29 @@ html {
 
 /* Hamburger Menu */
 .hamburger {
-  display: none; /* Hidden by default, visible on mobile */
+  display: none;
   flex-direction: column;
+  justify-content: space-between;
   cursor: pointer;
   margin-left: auto;
   background: linear-gradient(45deg, #ff7e5f, #feb47b);
   padding: 15px;
   border-radius: 15px;
+  width: 50px; /* Set a fixed width */
+  height: 50px; /* Set a fixed height */
+  align-items: center; /* Center align the spans */
 }
 
 .hamburger span {
   height: 3px; /* Height of each line */
   width: 25px; /* Width of each line */
-  background: #ffffff; /* Color of the lines (black) */
+  background: #ffffff; /* Color of the lines */
   margin-bottom: 4px; /* Spacing between lines */
   border-radius: 5px; /* Slightly round the edges of lines */
+}
+
+.hamburger span:last-child {
+  margin-bottom: 0; /* Remove margin from the last span */
 }
 
 @media (max-width: 768px) {
@@ -164,6 +175,39 @@ html {
 
   .nav.active {
     display: flex;
+  }
+
+  /* Mobile View Adjustments */
+  .header {
+    height: auto;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .header .logo-container {
+    flex: 1;
+    padding-top: 0;
+  }
+
+  .header .logo {
+    height: 200px; /* Adjusted logo size for mobile view */
+  }
+
+  .contact-info {
+    flex: 2;
+  }
+
+  .hamburger {
+    flex: 1;
+    justify-content: flex-end;
+  }
+
+  .header .logo-container,
+  .contact-info,
+  .hamburger {
+    flex: 1;
   }
 }
 
@@ -313,8 +357,8 @@ html {
   gap: 20px;
   justify-content: center;
 }
+
 .services-section {
-  /* background: url("/Assets - Logo /plumbing .png") no-repeat center center; */
   background-size: cover;
   padding: 40px 0;
   color: #ffffff; /* Optional: Change text color to ensure readability */
@@ -374,6 +418,7 @@ html {
   transition: 0.2s ease-in-out;
   border-top: 1px solid #eb955e;
 }
+
 .card__header-text {
   display: flex;
   justify-content: space-between;
@@ -381,11 +426,6 @@ html {
   width: 100%;
 }
 
-/* .card__title {
-  font-size: 1.5rem; 
-  font-weight: bold;
-  color: #000000;
-} */
 .card__arc {
   width: 80px;
   height: 80px;
@@ -515,131 +555,6 @@ html {
 }
 
 /* Why Choose Us Section */
-/* .section {
-  width: 100%;
-  position: relative;
-  background-color: #fff;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: center;
-  padding: 10px 16px;
-  gap: 40px;
-  text-align: left;
-  font-size: var(--heading-font-size);
-  color: #21272a;
-  font-family: "Manrope", sans-serif;
-}
-
-.section h2 {
-  font-size: var(--heading-font-size); 
-  color: var(--text-color); 
-}
-
-.content-box {
-  border: 0.5px solid #eb955e;
-}
-
-.section-text {
-  width: 384px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: 12px;
-  text-align: justify;
-}
-
-.section-text h2 {
-  font-size: var(--heading-font-size); 
-  color: var(--text-color); 
-}
-
-.content h2 {
-  font-size: 18px !important;
-  text-align: center;
-}
-
-.secondary-headline {
-  align-self: stretch;
-  position: relative;
-  line-height: 70%;
-}
-
-.paragraph {
-  align-self: stretch;
-  position: relative;
-  font-size: var(--paragraph-font-size); 
-  line-height: 140%;
-}
-
-.row {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 40px;
-  font-size: 20px;
-  width: 100%;
-  max-width: 1200px;
-}
-
-.content-box {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  background-color: #fff;
-  padding: 24px;
-  border-radius: 8px;
-}
-
-.icon-container {
-  align-self: center;
-  margin-bottom: 16px;
-}
-
-.icon-jam-icons-outline-l {
-  width: 48px;
-  height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.icon-placeholder {
-  max-width: 100%;
-  max-height: 100%;
-}
-
-.content {
-  align-self: stretch;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: 16px;
-}
-
-.title-category {
-  width: 100%;
-  font-size: 24px !important;
-  font-weight: 700;
-  margin-bottom: 8px;
-}
-
-.paragraph1 {
-  width: 100%;
-  font-size: 16px;
-  line-height: 140%;
-  color: black;
-  margin-bottom: 16px;
-  text-align: center;
-} */
-
-/* Why Choose Us Section - Improved */
 .section {
   width: 100%;
   position: relative;
@@ -649,7 +564,6 @@ html {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* padding: 60px 16px; */
   text-align: center;
   font-size: 32px;
   color: #21272a;
@@ -759,6 +673,7 @@ html {
   background: url("/Assets - Logo /close-up-workers-cooperating-shaking-hands.jpg")
     no-repeat center center;
   background-size: cover;
+  height: auto;
 }
 
 .testimonial-container::before {
@@ -793,7 +708,6 @@ html {
   max-width: 330px;
   min-height: 250px;
   height: 280px;
-  /* background: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%); */
   background: white;
   border-radius: 20px;
   border: 1px solid #eb955e;
@@ -1003,7 +917,6 @@ html {
 
 /* Footer */
 .footer {
-  /* background: linear-gradient(45deg, #feb47b, #ff7e5f); */
   background: black;
   color: white;
   padding: 20px 0;
@@ -1020,7 +933,6 @@ html {
 }
 
 .footer-logo {
-  /* max-height: 40px; */
   height: 200px;
   width: auto;
   flex-shrink: 0;
@@ -1111,12 +1023,19 @@ html {
   .header,
   .nav,
   .our-services {
-    flex-direction: column;
-    text-align: center;
+    gap: 30px;
+    /* flex-direction: column;
+    text-align: center; */
   }
 
-  .header .logo {
-    height: 50px;
+  @media (max-width: 1024px) {
+    .header .logo {
+      /* height: 50px; */
+      width: 100%;
+      object-fit: contain;
+      /* border: 1px solid black; */
+      /* align-self: center; */
+    }
   }
 
   .nav {
@@ -1275,6 +1194,7 @@ html {
     margin-bottom: 20px;
   }
 }
+
 @media (max-width: 768px) {
   .testimonial-carousel {
     flex-direction: column;
@@ -1290,6 +1210,7 @@ html {
     top: 50%; /* Center the controls vertically */
   }
 }
+
 @media (max-width: 768px) {
   .contact-content {
     flex-direction: column;
@@ -1307,6 +1228,7 @@ html {
     flex-direction: column;
   }
 }
+
 /* Remove the Menu text on smaller screens */
 @media (max-width: 768px) {
   #menu-text {
@@ -1326,6 +1248,7 @@ html {
     flex-direction: column;
   }
 }
+
 /* Hide the "Menu" text on mobile screens */
 @media (max-width: 768px) {
   #menu-text {
