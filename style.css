@@ -160,7 +160,7 @@ html {
   .header .logo {
     width: 100%;
     object-fit: contain;
-    transform: scale(1.5);
+    transform: scale(3);
     margin-top: 20px;
     margin-left: 10px;
   }
@@ -172,11 +172,12 @@ html {
     display: flex;
     justify-content: flex-start !important;
     align-items: center;
+    margin-top: 20px;
   }
 
   .header .logo {
-    height: auto !important;
-    width: 80% !important;
+    height: 140px !important;
+    width: auto !important;
     max-width: 400px !important;
   }
 

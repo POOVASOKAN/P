@@ -69,27 +69,19 @@ html {
 }
 
 .header .logo-container {
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
   padding-top: 20px;
-}
-
-/* Hide the Commercials link */
-.commercial-link {
-  display: none;
+  width: 100px;
 }
 
 .header .logo {
   height: 200px;
   width: auto;
-  transition: height 0.3s ease;
 }
 
 .header .contact-info {
   display: flex;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
 }
 
 .contact-info .phone-number,
@@ -100,7 +92,7 @@ html {
   border-radius: 10px;
   cursor: pointer;
   border: none;
-  font-size: 16px; /* Maintained original size */
+  font-size: 16px;
   transition: background 0.3s ease;
 }
 
@@ -109,96 +101,13 @@ html {
   background: linear-gradient(45deg, #feb47b, #ff7e5f);
 }
 
-/* Hamburger Menu */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  margin-left: auto;
-  background: linear-gradient(45deg, #ff7e5f, #feb47b);
-  padding: 15px;
-  border-radius: 15px;
-}
-
-.hamburger span {
-  height: 3px;
-  width: 25px;
-  background: #ffffff;
-  margin-bottom: 4px;
-  border-radius: 5px;
-}
-
-@media (max-width: 768px) {
-  .header {
-    height: auto;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .header .logo {
-    height: 150px; /* Adjusted for smaller screens */
-    width: auto;
-    margin-left: 10px;
-  }
-
-  .header .hamburger {
-    display: flex;
-    padding: 10px;
-    align-self: center;
-  }
-
-  .contact-info {
-    display: none;
-  }
-
-  .phone-number {
-    display: none;
-  }
-
-  .nav {
-    display: none;
-    flex-direction: column;
-    text-align: center;
-    gap: 10px;
-    padding: 20px 0;
-    background-color: #ffffff;
-    width: 100%;
-  }
-
-  .nav.active {
-    display: flex;
-  }
-
-  .nav .nav-link {
-    padding: 10px 0; /* Adjust padding for mobile */
-  }
-}
-
-@media (max-width: 480px) {
-  .header .logo {
-    height: 120px; /* Adjusted further for smallest screens */
-    width: auto;
-  }
-
-  .hamburger {
-    padding: 8px;
-    border-radius: 8px;
-  }
-
-  .nav .nav-link {
-    font-size: 14px; /* Reduced font size for smallest screens */
-    padding: 8px 0;
-  }
-}
-
 /* Navigation */
 .nav {
   display: flex;
   justify-content: center;
   gap: 20px;
   padding: 10px 0;
-  font-size: 18px; /* Maintained original size */
+  font-size: 18px;
   flex-grow: 1;
   flex-wrap: wrap;
   background-color: #ffffff;
@@ -233,17 +142,100 @@ html {
   transform: scaleX(1);
 }
 
-@media (max-width: 1024px) {
-  .nav {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center; /* Center align the spans */
+  cursor: pointer;
+  flex-shrink: 0;
+  margin-left: auto;
+  background: linear-gradient(45deg, #ff7e5f, #feb47b);
+  padding: 15px;
+  border-radius: 15px;
+  width: 15px;
+  height: 15px;
+  align-items: center;
+}
 
-  .nav .nav-link {
-    padding: 10px 0;
+.hamburger span {
+  height: 3px;
+  width: 25px;
+  background: #ffffff;
+  margin-bottom: 4px;
+  border-radius: 5px;
+}
+
+.hamburger span:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .header .logo {
+    width: 100%;
+    object-fit: contain;
+    transform: scale(3);
+    margin-top: 20px;
+    margin-left: 10px;
   }
 }
+
+@media (max-width: 768px) {
+  .header .logo-container {
+    padding-top: 0;
+    display: flex;
+    justify-content: flex-start !important;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .header .logo {
+    height: 140px !important;
+    width: auto !important;
+    max-width: 400px !important;
+  }
+
+  /* Setting up the hamburger menu */
+  .hamburger {
+    display: flex;
+    width: 60px;
+    height: 60px;
+  }
+
+  .hamburger {
+    justify-content: center;
+    flex: 0 0 auto;
+  }
+
+  /* Navigation adjustments for mobile */
+  .nav {
+    display: none; /* Initially hidden */
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+    padding: 20px 0;
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
+  /* Header adjustments for mobile */
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    display: flex;
+  }
+
+  /* Hide contact info on mobile */
+  .contact-info {
+    display: none !important;
+  }
+}
+
 /* /--Landinhg--/ */
 /* General container styling */
 .container {
