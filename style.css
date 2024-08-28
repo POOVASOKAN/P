@@ -1,5 +1,4 @@
 /* General Styles */
-
 * {
   box-sizing: border-box;
 }
@@ -55,15 +54,10 @@ html {
 }
 
 .header .logo-container {
-  /* display: flex; */
-  /* align-items: start; */
-  /* flex-shrink: 0; */
   padding-top: 20px;
   width: 100px;
-  /* height: 100px; */
 }
 
-/* Adjusted the logo size */
 .header .logo {
   height: 200px;
   width: auto;
@@ -137,7 +131,7 @@ html {
 .hamburger {
   display: none;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center; /* Center align the spans */
   cursor: pointer;
   flex-shrink: 0;
   margin-left: auto;
@@ -161,15 +155,46 @@ html {
   margin-bottom: 0;
 }
 
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .header .logo {
+    width: 100%;
+    object-fit: contain;
+    transform: scale(1.5);
+    margin-top: 20px;
+    margin-left: 10px;
+  }
+}
+
 @media (max-width: 768px) {
+  .header .logo-container {
+    padding-top: 0;
+    display: flex;
+    justify-content: flex-start !important;
+    align-items: center;
+  }
+
+  .header .logo {
+    height: auto !important;
+    width: 80% !important;
+    max-width: 400px !important;
+  }
+
+  /* Setting up the hamburger menu */
   .hamburger {
     display: flex;
     width: 60px;
     height: 60px;
   }
 
+  .hamburger {
+    justify-content: center;
+    flex: 0 0 auto;
+  }
+
+  /* Navigation adjustments for mobile */
   .nav {
-    display: none;
+    display: none; /* Initially hidden */
     flex-direction: column;
     text-align: center;
     gap: 10px;
@@ -180,9 +205,8 @@ html {
     display: flex;
   }
 
-  /* Mobile View Adjustments */
+  /* Header adjustments for mobile */
   .header {
-    height: auto;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -190,32 +214,9 @@ html {
     display: flex;
   }
 
-  .header .logo-container {
-    flex: 0 0 auto;
-    padding-top: 0;
-    display: flex;
-    justify-content: flex-start !important;
-    align-items: center;
-  }
-
-  .header .logo {
-    height: 300px;
-    width: auto;
-  }
-
+  /* Hide contact info on mobile */
   .contact-info {
-    /* flex: 2; */
     display: none !important;
-  }
-
-  .hamburger {
-    /* flex: 1; */
-    justify-content: flex-end;
-    flex: 0 0 auto;
-  }
-
-  .header .logo-container {
-    flex: 1;
   }
 }
 
@@ -1032,18 +1033,14 @@ html {
   .nav,
   .our-services {
     gap: 30px;
-    /* flex-direction: column;
-    text-align: center; */
   }
 
-  @media (max-width: 1024px) {
-    .header .logo {
-      /* height: 50px; */
-      width: 100%;
-      object-fit: contain;
-      /* border: 1px solid black; */
-      /* align-self: center; */
-    }
+  .header .logo {
+    width: 100%;
+    object-fit: contain;
+    transform: scale(1.5);
+    margin-top: 20px;
+    margin-left: 10px;
   }
 
   .nav {
@@ -1243,12 +1240,8 @@ html {
     display: none;
   }
 
-  .hamburger {
-    display: flex;
-  }
-
   .nav {
-    display: none; /* Initially hidden */
+    display: none;
   }
 
   .nav.active {
@@ -1263,16 +1256,12 @@ html {
     display: none !important;
   }
 
-  .hamburger {
-    display: flex; /* Ensure the hamburger icon is visible */
-  }
-
   .nav {
-    display: none; /* Initially hide the navigation links */
+    display: none;
   }
 
   .nav.active {
     display: flex;
-    flex-direction: column; /* Show links in a column when the menu is active */
+    flex-direction: column;
   }
 }
